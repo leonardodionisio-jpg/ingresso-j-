@@ -5,6 +5,13 @@
    cores em hexadecimal, tamanhos em px, fonte Arial e nenhuma animação.
    A responsividade (media queries) fica no fim deste arquivo e não faz parte da aula. */
 
+/* variaveis*/
+:root {
+  --cor-primaria: #4b1e8c;
+  --cor-destaque: #ff7a1a;
+  --cor-base: "Poppins", arial, sans-serif;
+}
+
 /* RESET: zera as margens e o espaçamento padrão do navegador.
    box-sizing: border-box faz width e height já contarem o padding e a borda (o box model fica previsível). */
 * {
@@ -16,7 +23,7 @@
 /* CORPO DA PÁGINA: fonte, cor de fundo e cor do texto que todos os elementos herdam.
    line-height é a altura da linha (1.5 = uma vez e meia o tamanho da fonte). */
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--cor-base);
   background-color: #f7f5fb;
   color: #222222;
   line-height: 1.5;
@@ -52,7 +59,7 @@ ol {
   left: 16px;
   z-index: 10;
   background-color: #ffffff;
-  color: #4B1E8C;
+  color: var(--cor-primaria);
   font-weight: bold;
   padding: 10px 18px;
   border-radius: 8px;
@@ -67,7 +74,7 @@ ol {
    inline-block permite usar padding e largura, mantendo o botão do tamanho do texto. */
 .botao {
   display: inline-block;
-  background-color: #FF7A1A;
+  background-color: var(--cor-destaque);
   color: #2a0f55;
   padding: 12px 24px;
   border-radius: 8px;
@@ -90,7 +97,7 @@ ol {
 
 /* VARIAÇÃO: botão roxo (usado no Avise-me e na newsletter). */
 .botao-secundario {
-  background-color: #4B1E8C;
+  background-color: var(--cor-primaria);
   color: #ffffff;
 }
 
@@ -149,7 +156,7 @@ ol {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 560px;
+  min-height: 70vh;
   background-image: url("img/hero.jpeg");
   background-size: cover;
   background-position: center;
@@ -183,7 +190,7 @@ ol {
 /* ETIQUETA laranja. text-transform deixa o texto em maiúsculas e letter-spacing espaça as letras. */
 .hero-tag {
   display: inline-block;
-  background-color: #FF7A1A;
+  background-color: var(--cor-destaque);
   color: #2a0f55;
   font-size: 13px;
   font-weight: bold;
@@ -417,6 +424,26 @@ ol {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(75, 30, 140, 0.08);
+  transition: 
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(75, 30, 140, 0.25);
+}
+
+@keyframes subir{
+  form{
+    opacity: 0;
+    transform: translateY(24px);
+    
+  }
+  to{
+    opacity: 0;
+    transform: translateY(0);
+  }
 }
 
 /* Área da foto: position relative para a data e o selo ficarem sobre ela. */
@@ -461,7 +488,7 @@ ol {
   position: absolute;
   top: 16px;
   right: 16px;
-  background-color: #FF7A1A;
+  background-color: var(--cor-destaque);
   color: #2a0f55;
   font-size: 12px;
   font-weight: bold;
@@ -673,7 +700,7 @@ ol {
 
 /* NEWSLETTER: faixa laranja com chamada e formulário de e-mail. */
 .newsletter {
-  background-color: #FF7A1A;
+  background-color: var(--cor-destaque);
   padding: 48px 0;
 }
 
